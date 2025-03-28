@@ -1,0 +1,32 @@
+[2025-03-28T18:12:10.158+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-28T18:12:10.376+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Etl_pipeline_order_management.transform_data scheduled__2025-03-28T18:09:00+00:00 [queued]>
+[2025-03-28T18:12:10.394+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Etl_pipeline_order_management.transform_data scheduled__2025-03-28T18:09:00+00:00 [queued]>
+[2025-03-28T18:12:10.434+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-28T18:12:10.459+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): transform_data> on 2025-03-28 18:09:00+00:00
+[2025-03-28T18:12:10.470+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2091) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-03-28T18:12:10.473+0000] {standard_task_runner.py:72} INFO - Started process 2093 to run task
+[2025-03-28T18:12:10.474+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'Etl_pipeline_order_management', 'transform_data', 'scheduled__2025-03-28T18:09:00+00:00', '--job-id', '96', '--raw', '--subdir', 'DAGS_FOLDER/Gestioncommands.py', '--cfg-path', '/tmp/tmp5g_afqa0']
+[2025-03-28T18:12:10.475+0000] {standard_task_runner.py:105} INFO - Job 96: Subtask transform_data
+[2025-03-28T18:12:10.533+0000] {task_command.py:467} INFO - Running <TaskInstance: Etl_pipeline_order_management.transform_data scheduled__2025-03-28T18:09:00+00:00 [running]> on host 499696d11f67
+[2025-03-28T18:12:10.634+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Etl_pipeline_order_management' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-28T18:09:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-28T18:09:00+00:00'
+[2025-03-28T18:12:10.636+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-03-28T18:12:10.637+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-03-28T18:12:10.639+0000] {logging_mixin.py:190} INFO - Current task name:transform_data state:running start_date:2025-03-28 18:12:10.377962+00:00
+[2025-03-28T18:12:10.639+0000] {logging_mixin.py:190} INFO - Dag name:Etl_pipeline_order_management and current dag run status:running
+[2025-03-28T18:12:10.640+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-28T18:12:10.641+0000] {Gestioncommands.py:146} INFO - Starting data transformation...
+[2025-03-28T18:12:10.695+0000] {Gestioncommands.py:163} INFO - Sales summary transformation completed.
+[2025-03-28T18:12:10.726+0000] {Gestioncommands.py:178} INFO - Product performance transformation completed.
+[2025-03-28T18:12:10.727+0000] {Gestioncommands.py:180} INFO - All data transformations in the refined layer have been completed.
+[2025-03-28T18:12:10.757+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-28T18:12:10.775+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-28T18:12:10.776+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=Etl_pipeline_order_management, task_id=transform_data, run_id=scheduled__2025-03-28T18:09:00+00:00, execution_date=20250328T180900, start_date=20250328T181210, end_date=20250328T181210
+[2025-03-28T18:12:10.814+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-03-28T18:12:10.814+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-03-28T18:12:10.816+0000] {logging_mixin.py:190} INFO - Dag name:Etl_pipeline_order_management queued_at:2025-03-28 18:12:00.477448+00:00
+[2025-03-28T18:12:10.818+0000] {logging_mixin.py:190} INFO - Task hostname:499696d11f67 operator:PythonOperator
+[2025-03-28T18:12:10.851+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-28T18:12:10.879+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-28T18:12:10.883+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

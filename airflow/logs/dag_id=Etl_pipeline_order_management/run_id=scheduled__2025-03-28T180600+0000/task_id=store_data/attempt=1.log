@@ -1,0 +1,31 @@
+[2025-03-28T18:09:06.828+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-28T18:09:07.061+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Etl_pipeline_order_management.store_data scheduled__2025-03-28T18:06:00+00:00 [queued]>
+[2025-03-28T18:09:07.077+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Etl_pipeline_order_management.store_data scheduled__2025-03-28T18:06:00+00:00 [queued]>
+[2025-03-28T18:09:07.116+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-28T18:09:07.142+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): store_data> on 2025-03-28 18:06:00+00:00
+[2025-03-28T18:09:07.155+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1996) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-03-28T18:09:07.159+0000] {standard_task_runner.py:72} INFO - Started process 1998 to run task
+[2025-03-28T18:09:07.158+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'Etl_pipeline_order_management', 'store_data', 'scheduled__2025-03-28T18:06:00+00:00', '--job-id', '92', '--raw', '--subdir', 'DAGS_FOLDER/Gestioncommands.py', '--cfg-path', '/tmp/tmp4nzcu5b1']
+[2025-03-28T18:09:07.160+0000] {standard_task_runner.py:105} INFO - Job 92: Subtask store_data
+[2025-03-28T18:09:07.243+0000] {task_command.py:467} INFO - Running <TaskInstance: Etl_pipeline_order_management.store_data scheduled__2025-03-28T18:06:00+00:00 [running]> on host 499696d11f67
+[2025-03-28T18:09:07.373+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Etl_pipeline_order_management' AIRFLOW_CTX_TASK_ID='store_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-28T18:06:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-28T18:06:00+00:00'
+[2025-03-28T18:09:07.375+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-03-28T18:09:07.376+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-03-28T18:09:07.377+0000] {logging_mixin.py:190} INFO - Current task name:store_data state:running start_date:2025-03-28 18:09:07.063523+00:00
+[2025-03-28T18:09:07.378+0000] {logging_mixin.py:190} INFO - Dag name:Etl_pipeline_order_management and current dag run status:running
+[2025-03-28T18:09:07.379+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-28T18:09:07.381+0000] {Gestioncommands.py:44} INFO - Retrieving CSV data from XCom...
+[2025-03-28T18:09:07.438+0000] {Gestioncommands.py:105} INFO - Inserting data into DuckDB tables...
+[2025-03-28T18:09:07.563+0000] {Gestioncommands.py:137} INFO - Data successfully stored into DuckDB.
+[2025-03-28T18:09:07.604+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-28T18:09:07.621+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-28T18:09:07.622+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=Etl_pipeline_order_management, task_id=store_data, run_id=scheduled__2025-03-28T18:06:00+00:00, execution_date=20250328T180600, start_date=20250328T180907, end_date=20250328T180907
+[2025-03-28T18:09:07.667+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-03-28T18:09:07.668+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-03-28T18:09:07.669+0000] {logging_mixin.py:190} INFO - Dag name:Etl_pipeline_order_management queued_at:2025-03-28 18:09:00.032764+00:00
+[2025-03-28T18:09:07.669+0000] {logging_mixin.py:190} INFO - Task hostname:499696d11f67 operator:PythonOperator
+[2025-03-28T18:09:07.697+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-28T18:09:07.739+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-28T18:09:07.743+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

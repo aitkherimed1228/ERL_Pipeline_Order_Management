@@ -1,0 +1,7 @@
+2025-03-27 11:07:38,065 - INFO - Connected to DuckDB.
+2025-03-27 11:07:38,089 - INFO - Schema created: raw.
+2025-03-27 11:07:38,089 - INFO - Schema created: refined.
+2025-03-27 11:07:38,100 - INFO - Schema created: report.
+2025-03-27 11:07:38,120 - INFO - Raw tables created.
+2025-03-27 11:07:38,142 - INFO - Closed DuckDB connection.
+2025-03-27 11:07:38,143 - INFO - ETL process completed successfully.
