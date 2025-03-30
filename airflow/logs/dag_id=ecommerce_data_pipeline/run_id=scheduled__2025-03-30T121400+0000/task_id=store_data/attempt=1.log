@@ -1,0 +1,30 @@
+[2025-03-30T12:15:14.869+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-30T12:15:15.142+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_data_pipeline.store_data scheduled__2025-03-30T12:14:00+00:00 [queued]>
+[2025-03-30T12:15:15.157+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_data_pipeline.store_data scheduled__2025-03-30T12:14:00+00:00 [queued]>
+[2025-03-30T12:15:15.159+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-30T12:15:15.177+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): store_data> on 2025-03-30 12:14:00+00:00
+[2025-03-30T12:15:15.190+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=228) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-03-30T12:15:15.192+0000] {standard_task_runner.py:72} INFO - Started process 252 to run task
+[2025-03-30T12:15:15.193+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ecommerce_data_pipeline', 'store_data', 'scheduled__2025-03-30T12:14:00+00:00', '--job-id', '665', '--raw', '--subdir', 'DAGS_FOLDER/Gestioncommands.py', '--cfg-path', '/tmp/tmp7mblfcgd']
+[2025-03-30T12:15:15.195+0000] {standard_task_runner.py:105} INFO - Job 665: Subtask store_data
+[2025-03-30T12:15:15.262+0000] {task_command.py:467} INFO - Running <TaskInstance: ecommerce_data_pipeline.store_data scheduled__2025-03-30T12:14:00+00:00 [running]> on host 778b271a0247
+[2025-03-30T12:15:15.378+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ecommerce_data_pipeline' AIRFLOW_CTX_TASK_ID='store_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-30T12:14:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-30T12:14:00+00:00'
+[2025-03-30T12:15:15.380+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-03-30T12:15:15.381+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-03-30T12:15:15.382+0000] {logging_mixin.py:190} INFO - Current task name:store_data state:running start_date:2025-03-30 12:15:15.143829+00:00
+[2025-03-30T12:15:15.382+0000] {logging_mixin.py:190} INFO - Dag name:ecommerce_data_pipeline and current dag run status:running
+[2025-03-30T12:15:15.383+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-30T12:15:15.398+0000] {Gestioncommands.py:44} INFO - Début du stockage incrémental...
+[2025-03-30T12:15:15.470+0000] {Gestioncommands.py:100} INFO - -1 nouvelles commandes ajoutées
+[2025-03-30T12:15:15.515+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-30T12:15:15.530+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-30T12:15:15.532+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=ecommerce_data_pipeline, task_id=store_data, run_id=scheduled__2025-03-30T12:14:00+00:00, execution_date=20250330T121400, start_date=20250330T121515, end_date=20250330T121515
+[2025-03-30T12:15:15.565+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-03-30T12:15:15.566+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-03-30T12:15:15.567+0000] {logging_mixin.py:190} INFO - Dag name:ecommerce_data_pipeline queued_at:2025-03-30 12:15:07.869633+00:00
+[2025-03-30T12:15:15.568+0000] {logging_mixin.py:190} INFO - Task hostname:778b271a0247 operator:PythonOperator
+[2025-03-30T12:15:15.611+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-30T12:15:15.641+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-30T12:15:15.644+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

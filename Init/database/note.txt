@@ -1,0 +1,95 @@
+
+# def load_refined(**kwargs):
+#     """
+#     À partir de la table raw.ecom_db, alimente les tables de la couche refined :
+#       - refined.clients
+#       - refined.commandes
+#       - refined.details_commandes
+#       - refined.produits
+#       - refined.paiements
+#     """
+#     try:
+#         logging.info("Starting to load data into refined tables...")
+#         with duckdb.connect(DB_PATH) as conn:
+#             # Création du schéma refined
+#             conn.execute("CREATE SCHEMA IF NOT EXISTS refined")
+            
+#             # Table clients : clients uniques
+#             conn.execute("""
+#                 CREATE OR REPLACE TABLE refined.clients AS
+#                 SELECT DISTINCT
+#                     client_id,
+#                     nom_client,
+#                     email, 
+#                     ville,
+#                     pays, 
+#                     genre 
+#                 FROM raw.ecom_db
+#                 ORDER BY client_id
+#             """)
+#             logging.info("Table refined.clients créée avec succès.")
+            
+#             # Table commandes : commandes
+#             conn.execute("""
+#                 CREATE OR REPLACE TABLE refined.commandes AS
+#                 SELECT DISTINCT
+#                     commande_id,
+#                     client_id, 
+#                     date_commande, 
+#                     montant_total, 
+#                     statut
+#                 FROM raw.ecom_db
+#                 ORDER BY commande_id
+#             """)
+#             logging.info("Table refined.commandes créée avec succès.")
+            
+#             # Table details_commandes : détails de commandes
+#             conn.execute("""
+#                 CREATE OR REPLACE TABLE refined.details_commandes AS
+#                 SELECT 
+#                     commande_id, 
+#                     produit_id, 
+#                     quantite, 
+#                     prix_unitaire, 
+#                     sous_total
+#                 FROM raw.ecom_db
+#                 GROUP BY 
+#                     commande_id, 
+#                     produit_id, 
+#                     quantite, 
+#                     prix_unitaire, 
+#                     sous_total
+#             """)
+#             logging.info("Table refined.details_commandes créée avec succès.")
+            
+#             # Table produits : informations sur les produits
+#             conn.execute("""
+#                 CREATE OR REPLACE TABLE refined.produits AS
+#                 SELECT DISTINCT
+#                     produit_id, 
+#                     nom_produit, 
+#                     prix_unitaire, 
+#                     stock
+#                 FROM raw.ecom_db
+#                 ORDER BY produit_id
+#             """)
+#             logging.info("Table refined.produits créée avec succès.")
+            
+#             # Table paiements : paiements associés aux commandes
+#             conn.execute("""
+#                 CREATE OR REPLACE TABLE refined.paiements AS
+#                 SELECT DISTINCT
+#                     paiement_id, 
+#                     commande_id, 
+#                     mode_paiement, 
+#                     statut_paiement, 
+#                     date_paiement
+#                 FROM raw.ecom_db
+#                 ORDER BY paiement_id
+#             """)
+#             logging.info("Table refined.paiements créée avec succès.")
+            
+#             logging.info("Chargement des tables refined terminé.")
+#     except Exception as e:
+#         logging.error(f"Error during loading refined data: {e}")
+#         raise

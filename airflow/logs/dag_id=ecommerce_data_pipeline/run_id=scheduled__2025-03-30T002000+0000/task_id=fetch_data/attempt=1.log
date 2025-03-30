@@ -1,0 +1,33 @@
+[2025-03-30T00:21:02.010+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-30T00:21:02.194+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_data_pipeline.fetch_data scheduled__2025-03-30T00:20:00+00:00 [queued]>
+[2025-03-30T00:21:02.202+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_data_pipeline.fetch_data scheduled__2025-03-30T00:20:00+00:00 [queued]>
+[2025-03-30T00:21:02.203+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-30T00:21:02.219+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): fetch_data> on 2025-03-30 00:20:00+00:00
+[2025-03-30T00:21:02.227+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=513) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-03-30T00:21:02.229+0000] {standard_task_runner.py:72} INFO - Started process 515 to run task
+[2025-03-30T00:21:02.230+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ecommerce_data_pipeline', 'fetch_data', 'scheduled__2025-03-30T00:20:00+00:00', '--job-id', '260', '--raw', '--subdir', 'DAGS_FOLDER/Gestioncommands.py', '--cfg-path', '/tmp/tmp6knh_v5z']
+[2025-03-30T00:21:02.231+0000] {standard_task_runner.py:105} INFO - Job 260: Subtask fetch_data
+[2025-03-30T00:21:02.282+0000] {task_command.py:467} INFO - Running <TaskInstance: ecommerce_data_pipeline.fetch_data scheduled__2025-03-30T00:20:00+00:00 [running]> on host 499696d11f67
+[2025-03-30T00:21:02.375+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='ecommerce_data_pipeline' AIRFLOW_CTX_TASK_ID='fetch_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-30T00:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-30T00:20:00+00:00'
+[2025-03-30T00:21:02.377+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-03-30T00:21:02.378+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-03-30T00:21:02.378+0000] {logging_mixin.py:190} INFO - Current task name:fetch_data state:running start_date:2025-03-30 00:21:02.195241+00:00
+[2025-03-30T00:21:02.379+0000] {logging_mixin.py:190} INFO - Dag name:ecommerce_data_pipeline and current dag run status:running
+[2025-03-30T00:21:02.380+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-30T00:21:02.381+0000] {Gestioncommands.py:40} INFO - Fetching data from API...
+[2025-03-30T00:21:03.046+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'my.api.mockaroo.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-03-30T00:21:03.817+0000] {Gestioncommands.py:45} INFO - Data fetched successfully
+[2025-03-30T00:21:03.819+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-30T00:21:03.828+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-30T00:21:03.828+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=ecommerce_data_pipeline, task_id=fetch_data, run_id=scheduled__2025-03-30T00:20:00+00:00, execution_date=20250330T002000, start_date=20250330T002102, end_date=20250330T002103
+[2025-03-30T00:21:03.845+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-03-30T00:21:03.846+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-03-30T00:21:03.846+0000] {logging_mixin.py:190} INFO - Dag name:ecommerce_data_pipeline queued_at:2025-03-30 00:21:00.635478+00:00
+[2025-03-30T00:21:03.847+0000] {logging_mixin.py:190} INFO - Task hostname:499696d11f67 operator:PythonOperator
+[2025-03-30T00:21:03.854+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-30T00:21:03.877+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-30T00:21:03.880+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

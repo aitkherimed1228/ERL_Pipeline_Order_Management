@@ -1,0 +1,44 @@
+[2025-03-30T12:45:07.717+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-30T12:45:07.922+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_data_pipeline.fetch_data manual__2025-03-30T12:45:05.246743+00:00 [queued]>
+[2025-03-30T12:45:07.934+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_data_pipeline.fetch_data manual__2025-03-30T12:45:05.246743+00:00 [queued]>
+[2025-03-30T12:45:07.936+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-30T12:45:07.953+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): fetch_data> on 2025-03-30 12:45:05.246743+00:00
+[2025-03-30T12:45:07.964+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=977) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-03-30T12:45:07.967+0000] {standard_task_runner.py:72} INFO - Started process 981 to run task
+[2025-03-30T12:45:07.967+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ecommerce_data_pipeline', 'fetch_data', 'manual__2025-03-30T12:45:05.246743+00:00', '--job-id', '759', '--raw', '--subdir', 'DAGS_FOLDER/Gestioncommands.py', '--cfg-path', '/tmp/tmpun6lfm45']
+[2025-03-30T12:45:07.969+0000] {standard_task_runner.py:105} INFO - Job 759: Subtask fetch_data
+[2025-03-30T12:45:08.035+0000] {task_command.py:467} INFO - Running <TaskInstance: ecommerce_data_pipeline.fetch_data manual__2025-03-30T12:45:05.246743+00:00 [running]> on host 778b271a0247
+[2025-03-30T12:45:08.152+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ecommerce_data_pipeline' AIRFLOW_CTX_TASK_ID='fetch_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-30T12:45:05.246743+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-30T12:45:05.246743+00:00'
+[2025-03-30T12:45:08.155+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-03-30T12:45:08.155+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-03-30T12:45:08.156+0000] {logging_mixin.py:190} INFO - Current task name:fetch_data state:running start_date:2025-03-30 12:45:07.923952+00:00
+[2025-03-30T12:45:08.157+0000] {logging_mixin.py:190} INFO - Dag name:ecommerce_data_pipeline and current dag run status:running
+[2025-03-30T12:45:08.157+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-30T12:45:08.159+0000] {Gestioncommands.py:31} INFO - Fetching data from API...
+[2025-03-30T12:45:08.738+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'my.api.mockaroo.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-03-30T12:45:09.480+0000] {Gestioncommands.py:35} INFO - Data fetched successfully.
+[2025-03-30T12:45:09.483+0000] {python.py:240} INFO - Done. Returned value was: commande_id,date_commande,client_id,montant_total,statut,produit_id,nom_produit,prix_unitaire,stock,quantite,sous_total,nom_client,email,ville,pays,genre ,paiement_id,mode_paiement,statut_paiement,date_paiement
+7780,2023-11-08,151,4521.52,Delivered,729,Currants,421.05,37,2,842.1,Carole Crain,ccrain0@blinklist.com,Kafr az ZayyÄt,Egypt,F,989,Transfer,cancel,2024-02-28
+7429,2021-07-16,198,3372.28,Shipped,769,Oil - Margarine,466.87,20,3,1400.61,Janina Doblin,jdoblin1@paypal.com,Igbor,Nigeria,M,493,PayPal,cancel,2021-10-15
+7263,2021-04-12,321,312.68,Delivered,564,Cherries - Fresh,217.79,50,2,435.58,Meyer McVeigh,mmcveigh2@sun.com,Kista,Sweden,M,277,Transfer,cancel,2022-02-01
+3679,2023-02-21,556,4063.32,Pending,764,Bread - Triangle White,248.22,4,1,248.22,Ezri Aspray,easpray3@shinystat.com,Nova Kakhovka,Ukraine,M,226,Transfer,pending,2020-12-26
+2923,2023-03-11,250,324.98,Delivered,734,Flour - Strong,66.54,8,3,199.62,Arlen Bradshaw,abradshaw4@arizona.edu,DivinÃ³polis,Brazil,M,663,PayPal,valid,2022-08-26
+4393,2022-07-27,255,896.15,Delivered,830,Coconut - Whole,253.8,50,3,761.4,Brigitte Learmonth,blearmonth5@indiegogo.com,Quime,Bolivia,F,966,PayPal,cancel,2023-05-19
+8999,2023-11-11,552,4912.77,Pending,546,Bread Sour Rolls,412.83,44,1,412.83,Lynn Maypes,lmaypes6@weibo.com,GobÅ,Japan,F,762,Transfer,cancel,2023-10-13
+6838,2020-10-12,461,4342.41,Shipped,711,Butter Sweet,483.01,7,1,483.01,Pam Caddie,pcaddie7@usatoday.com,Esperanza,Philippines,F,825,Transfer,pending,2021-07-03
+5139,2021-04-21,328,4798.0,Delivered,820,Momiji Oroshi Chili Sauce,457.12,22,1,457.12,Kirsteni Maddie,kmaddie8@wordpress.com,Hai RiÃªng,Vietnam,M,598,Bank card,valid,2023-12-06
+6717,2024-01-18,326,2103.83,Delivered,652,Mangoes,55.59,14,3,166.77,Staford Domingues,sdomingues9@kickstarter.com,Sumberingin Kulon,Indonesia,F,913,PayPal,pending,2022-09-04
+
+[2025-03-30T12:45:09.511+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-30T12:45:09.513+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=ecommerce_data_pipeline, task_id=fetch_data, run_id=manual__2025-03-30T12:45:05.246743+00:00, execution_date=20250330T124505, start_date=20250330T124507, end_date=20250330T124509
+[2025-03-30T12:45:09.546+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-03-30T12:45:09.547+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-03-30T12:45:09.548+0000] {logging_mixin.py:190} INFO - Dag name:ecommerce_data_pipeline queued_at:2025-03-30 12:45:05.260904+00:00
+[2025-03-30T12:45:09.549+0000] {logging_mixin.py:190} INFO - Task hostname:778b271a0247 operator:PythonOperator
+[2025-03-30T12:45:09.593+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-30T12:45:09.633+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-30T12:45:09.636+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

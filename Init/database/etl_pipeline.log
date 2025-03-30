@@ -5,3 +5,57 @@
 2025-03-27 11:07:38,120 - INFO - Raw tables created.
 2025-03-27 11:07:38,142 - INFO - Closed DuckDB connection.
 2025-03-27 11:07:38,143 - INFO - ETL process completed successfully.
+2025-03-29 16:05:31,380 - INFO - Connected to DuckDB.
+2025-03-29 16:05:31,396 - INFO - Schema created: raw.
+2025-03-29 16:05:31,399 - INFO - Schema created: refined.
+2025-03-29 16:05:31,400 - INFO - Schema created: report.
+2025-03-29 16:05:31,408 - INFO - Raw table 'ecom_db' created successfully.
+2025-03-29 16:05:31,420 - INFO - Closed DuckDB connection.
+2025-03-29 16:05:31,420 - INFO - ETL process completed successfully.
+2025-03-29 16:05:53,562 - INFO - Connected to DuckDB.
+2025-03-29 16:05:53,562 - INFO - Schema created: raw.
+2025-03-29 16:05:53,562 - INFO - Schema created: refined.
+2025-03-29 16:05:53,562 - INFO - Schema created: report.
+2025-03-29 16:05:53,562 - INFO - Raw table 'ecom_db' created successfully.
+2025-03-29 16:05:53,568 - INFO - Closed DuckDB connection.
+2025-03-29 16:05:53,568 - INFO - ETL process completed successfully.
+2025-03-29 16:41:54,749 - INFO - Connected to DuckDB.
+2025-03-29 16:41:54,749 - INFO - Schema created: raw.
+2025-03-29 16:41:54,757 - INFO - Schema created: refined.
+2025-03-29 16:41:54,757 - INFO - Schema created: report.
+2025-03-29 16:41:54,757 - INFO - Raw table 'ecom_db' created successfully.
+2025-03-29 16:41:54,811 - INFO - Refined tables 'clients , commandes , details_commandes , produits , paiements' created successfully.
+2025-03-29 16:41:54,817 - INFO - Closed DuckDB connection.
+2025-03-29 16:41:54,817 - INFO - ETL process completed successfully.
+2025-03-29 16:52:39,409 - INFO - Connected to DuckDB.
+2025-03-29 16:52:39,409 - INFO - Schema created: raw.
+2025-03-29 16:52:39,409 - INFO - Schema created: refined.
+2025-03-29 16:52:39,409 - INFO - Schema created: report.
+2025-03-29 16:52:39,409 - INFO - Raw table 'ecom_db' created successfully.
+2025-03-29 16:52:39,409 - INFO - Refined tables 'clients , commandes , details_commandes , produits , paiements' created successfully.
+2025-03-29 16:52:39,414 - INFO - Closed DuckDB connection.
+2025-03-29 16:52:39,414 - INFO - ETL process completed successfully.
+2025-03-29 22:49:21,253 - INFO - Connected to DuckDB.
+2025-03-29 22:49:21,270 - INFO - Schema created: raw.
+2025-03-29 22:49:21,270 - INFO - Schema created: refined.
+2025-03-29 22:49:21,270 - INFO - Schema created: report.
+2025-03-29 22:49:21,278 - INFO - Raw table 'ecom_db' created successfully.
+2025-03-29 22:49:21,295 - INFO - Refined tables 'clients , commandes , details_commandes , produits , paiements' created successfully.
+2025-03-29 22:49:21,307 - INFO - Closed DuckDB connection.
+2025-03-29 22:49:21,307 - INFO - ETL process completed successfully.
+2025-03-30 11:02:11,973 - INFO - Connected to DuckDB.
+2025-03-30 11:02:11,973 - INFO - Schema created: raw.
+2025-03-30 11:02:11,988 - INFO - Schema created: refined.
+2025-03-30 11:02:11,991 - INFO - Schema created: report.
+2025-03-30 11:02:12,003 - INFO - Raw table 'ecom_db' created successfully.
+2025-03-30 11:02:12,007 - INFO - Refined tables 'clients , commandes , details_commandes , produits , paiements' created successfully.
+2025-03-30 11:02:12,022 - INFO - Closed DuckDB connection.
+2025-03-30 11:02:12,022 - INFO - ETL process completed successfully.
+2025-03-30 11:49:55,816 - INFO - Connected to DuckDB.
+2025-03-30 11:49:55,819 - INFO - Schema created: raw.
+2025-03-30 11:49:55,820 - INFO - Schema created: refined.
+2025-03-30 11:49:55,821 - INFO - Schema created: report.
+2025-03-30 11:49:55,823 - INFO - Raw table 'ecom_db' created successfully.
+2025-03-30 11:49:55,827 - INFO - Refined tables 'clients , commandes , details_commandes , produits , paiements' created successfully.
+2025-03-30 11:49:55,829 - INFO - Closed DuckDB connection.
+2025-03-30 11:49:55,829 - INFO - ETL process completed successfully.

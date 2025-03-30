@@ -1,0 +1,34 @@
+[2025-03-29T18:16:02.273+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-29T18:16:02.524+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Etl_pipeline_order_management.fetch_data scheduled__2025-03-29T18:15:00+00:00 [queued]>
+[2025-03-29T18:16:02.537+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Etl_pipeline_order_management.fetch_data scheduled__2025-03-29T18:15:00+00:00 [queued]>
+[2025-03-29T18:16:02.576+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-29T18:16:02.602+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): fetch_data> on 2025-03-29 18:15:00+00:00
+[2025-03-29T18:16:02.613+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1287) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-03-29T18:16:02.615+0000] {standard_task_runner.py:72} INFO - Started process 1289 to run task
+[2025-03-29T18:16:02.618+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'Etl_pipeline_order_management', 'fetch_data', 'scheduled__2025-03-29T18:15:00+00:00', '--job-id', '160', '--raw', '--subdir', 'DAGS_FOLDER/Gestioncommands.py', '--cfg-path', '/tmp/tmphpyfzd8e']
+[2025-03-29T18:16:02.619+0000] {standard_task_runner.py:105} INFO - Job 160: Subtask fetch_data
+[2025-03-29T18:16:02.684+0000] {task_command.py:467} INFO - Running <TaskInstance: Etl_pipeline_order_management.fetch_data scheduled__2025-03-29T18:15:00+00:00 [running]> on host 499696d11f67
+[2025-03-29T18:16:02.814+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Etl_pipeline_order_management' AIRFLOW_CTX_TASK_ID='fetch_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-29T18:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-29T18:15:00+00:00'
+[2025-03-29T18:16:02.816+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-03-29T18:16:02.817+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-03-29T18:16:02.818+0000] {logging_mixin.py:190} INFO - Current task name:fetch_data state:running start_date:2025-03-29 18:16:02.526373+00:00
+[2025-03-29T18:16:02.819+0000] {logging_mixin.py:190} INFO - Dag name:Etl_pipeline_order_management and current dag run status:running
+[2025-03-29T18:16:02.820+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-29T18:16:02.822+0000] {Gestioncommands.py:28} INFO - Fetching data from API...
+[2025-03-29T18:16:03.632+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'my.api.mockaroo.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-03-29T18:16:04.467+0000] {Gestioncommands.py:32} INFO - Data fetched from API successfully.
+[2025-03-29T18:16:04.530+0000] {Gestioncommands.py:36} INFO - CSV data pushed to XCom.
+[2025-03-29T18:16:04.533+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-29T18:16:04.547+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-29T18:16:04.548+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=Etl_pipeline_order_management, task_id=fetch_data, run_id=scheduled__2025-03-29T18:15:00+00:00, execution_date=20250329T181500, start_date=20250329T181602, end_date=20250329T181604
+[2025-03-29T18:16:04.626+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-03-29T18:16:04.627+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-03-29T18:16:04.627+0000] {logging_mixin.py:190} INFO - Dag name:Etl_pipeline_order_management queued_at:2025-03-29 18:16:00.128917+00:00
+[2025-03-29T18:16:04.628+0000] {logging_mixin.py:190} INFO - Task hostname:499696d11f67 operator:PythonOperator
+[2025-03-29T18:16:04.644+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-29T18:16:04.680+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-29T18:16:04.682+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

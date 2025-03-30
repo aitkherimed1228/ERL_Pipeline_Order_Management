@@ -1,0 +1,135 @@
+[2025-03-29T18:19:07.832+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-29T18:19:08.023+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Etl_pipeline_order_management.store_data scheduled__2025-03-29T18:18:00+00:00 [queued]>
+[2025-03-29T18:19:08.037+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Etl_pipeline_order_management.store_data scheduled__2025-03-29T18:18:00+00:00 [queued]>
+[2025-03-29T18:19:08.076+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-29T18:19:08.096+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): store_data> on 2025-03-29 18:18:00+00:00
+[2025-03-29T18:19:08.108+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1483) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-03-29T18:19:08.110+0000] {standard_task_runner.py:72} INFO - Started process 1487 to run task
+[2025-03-29T18:19:08.111+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'Etl_pipeline_order_management', 'store_data', 'scheduled__2025-03-29T18:18:00+00:00', '--job-id', '176', '--raw', '--subdir', 'DAGS_FOLDER/Gestioncommands.py', '--cfg-path', '/tmp/tmpn4wuvcyb']
+[2025-03-29T18:19:08.113+0000] {standard_task_runner.py:105} INFO - Job 176: Subtask store_data
+[2025-03-29T18:19:08.168+0000] {task_command.py:467} INFO - Running <TaskInstance: Etl_pipeline_order_management.store_data scheduled__2025-03-29T18:18:00+00:00 [running]> on host 499696d11f67
+[2025-03-29T18:19:08.269+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Etl_pipeline_order_management' AIRFLOW_CTX_TASK_ID='store_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-29T18:18:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-29T18:18:00+00:00'
+[2025-03-29T18:19:08.272+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-03-29T18:19:08.272+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-03-29T18:19:08.273+0000] {logging_mixin.py:190} INFO - Current task name:store_data state:running start_date:2025-03-29 18:19:08.024815+00:00
+[2025-03-29T18:19:08.273+0000] {logging_mixin.py:190} INFO - Dag name:Etl_pipeline_order_management and current dag run status:running
+[2025-03-29T18:19:08.274+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-29T18:19:08.275+0000] {Gestioncommands.py:44} INFO - Retrieving CSV data from XCom...
+[2025-03-29T18:19:08.333+0000] {Gestioncommands.py:89} INFO - Inserting data into DuckDB tables...
+[2025-03-29T18:19:08.343+0000] {Gestioncommands.py:125} ERROR - Error during storing data: "['stock'] not in index"
+[2025-03-29T18:19:08.344+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/Gestioncommands.py", line 58, in store_data
+    with duckdb.connect(DB_PATH) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/Gestioncommands.py", line 92, in store_data
+    ecom_df = df[['client_id',
+              ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/frame.py", line 3899, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6115, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6179, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['stock'] not in index"
+[2025-03-29T18:19:08.375+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-03-29T18:19:08.376+0000] {logging_mixin.py:190} INFO - Task start:2025-03-29 18:19:08.024815+00:00 end:2025-03-29 18:19:08.374637+00:00 duration:0.349822
+[2025-03-29T18:19:08.377+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): store_data> dag:<DAG: Etl_pipeline_order_management> dagrun:<DagRun Etl_pipeline_order_management @ 2025-03-29 18:18:00+00:00: scheduled__2025-03-29T18:18:00+00:00, state:running, queued_at: 2025-03-29 18:19:00.691323+00:00. externally triggered: False>
+[2025-03-29T18:19:08.378+0000] {logging_mixin.py:190} INFO - Failure caused by "['stock'] not in index"
+[2025-03-29T18:19:08.379+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=Etl_pipeline_order_management, task_id=store_data, run_id=scheduled__2025-03-29T18:18:00+00:00, execution_date=20250329T181800, start_date=20250329T181908, end_date=20250329T181908
+[2025-03-29T18:19:08.461+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-29T18:19:08.462+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 176 for task store_data ("['stock'] not in index"; 1487)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/Gestioncommands.py", line 58, in store_data
+    with duckdb.connect(DB_PATH) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/Gestioncommands.py", line 92, in store_data
+    ecom_df = df[['client_id',
+              ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/frame.py", line 3899, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6115, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6179, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['stock'] not in index"
+[2025-03-29T18:19:08.488+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-03-29T18:19:08.500+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

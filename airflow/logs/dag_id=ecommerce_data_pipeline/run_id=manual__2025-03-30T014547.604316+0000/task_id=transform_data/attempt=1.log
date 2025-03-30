@@ -1,0 +1,35 @@
+[2025-03-30T01:45:57.665+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-30T01:45:57.860+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_data_pipeline.transform_data manual__2025-03-30T01:45:47.604316+00:00 [queued]>
+[2025-03-30T01:45:57.873+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_data_pipeline.transform_data manual__2025-03-30T01:45:47.604316+00:00 [queued]>
+[2025-03-30T01:45:57.874+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-30T01:45:57.889+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): transform_data> on 2025-03-30 01:45:47.604316+00:00
+[2025-03-30T01:45:57.901+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1158) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-03-30T01:45:57.904+0000] {standard_task_runner.py:72} INFO - Started process 1160 to run task
+[2025-03-30T01:45:57.904+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ecommerce_data_pipeline', 'transform_data', 'manual__2025-03-30T01:45:47.604316+00:00', '--job-id', '365', '--raw', '--subdir', 'DAGS_FOLDER/Gestioncommands.py', '--cfg-path', '/tmp/tmpd15fv8eh']
+[2025-03-30T01:45:57.905+0000] {standard_task_runner.py:105} INFO - Job 365: Subtask transform_data
+[2025-03-30T01:45:57.963+0000] {task_command.py:467} INFO - Running <TaskInstance: ecommerce_data_pipeline.transform_data manual__2025-03-30T01:45:47.604316+00:00 [running]> on host 778b271a0247
+[2025-03-30T01:45:58.060+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='ecommerce_data_pipeline' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-30T01:45:47.604316+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-30T01:45:47.604316+00:00'
+[2025-03-30T01:45:58.062+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-03-30T01:45:58.064+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-03-30T01:45:58.065+0000] {logging_mixin.py:190} INFO - Current task name:transform_data state:running start_date:2025-03-30 01:45:57.861407+00:00
+[2025-03-30T01:45:58.066+0000] {logging_mixin.py:190} INFO - Dag name:ecommerce_data_pipeline and current dag run status:running
+[2025-03-30T01:45:58.067+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-30T01:45:58.068+0000] {Gestioncommands.py:117} INFO - Starting data transformation...
+[2025-03-30T01:45:58.113+0000] {Gestioncommands.py:135} INFO - Refined table 'clients' created successfully
+[2025-03-30T01:45:58.127+0000] {Gestioncommands.py:149} INFO - Refined table 'commandes' created successfully
+[2025-03-30T01:45:58.137+0000] {Gestioncommands.py:168} INFO - Refined table 'details_commandes' created successfully
+[2025-03-30T01:45:58.152+0000] {Gestioncommands.py:181} INFO - Refined table 'produits' created successfully
+[2025-03-30T01:45:58.164+0000] {Gestioncommands.py:195} INFO - Refined table 'paiements' created successfully
+[2025-03-30T01:45:58.202+0000] {Gestioncommands.py:197} INFO - Data transformation completed
+[2025-03-30T01:45:58.203+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-30T01:45:58.216+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-30T01:45:58.217+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=ecommerce_data_pipeline, task_id=transform_data, run_id=manual__2025-03-30T01:45:47.604316+00:00, execution_date=20250330T014547, start_date=20250330T014557, end_date=20250330T014558
+[2025-03-30T01:45:58.248+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-03-30T01:45:58.249+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-03-30T01:45:58.250+0000] {logging_mixin.py:190} INFO - Dag name:ecommerce_data_pipeline queued_at:2025-03-30 01:45:47.620026+00:00
+[2025-03-30T01:45:58.250+0000] {logging_mixin.py:190} INFO - Task hostname:778b271a0247 operator:PythonOperator
+[2025-03-30T01:45:58.282+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-30T01:45:58.308+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-30T01:45:58.312+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
